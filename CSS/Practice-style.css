@@ -1,0 +1,46 @@
+/* selector for id="container" */
+body {
+    background-color: black;
+    color: white;
+}
+
+.searchbar {
+    margin: .5em;
+}
+
+.sb-img {
+    width: 75px;
+    float: left;
+}
+
+a {
+    color: white;
+    font-size: 1.2em;
+}
+a:hover {
+    font-size: 1.4em;
+}
+
+#container {
+    margin: 50px auto;
+    width: 500px;
+    border: dashed white;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* selector for all "em" elements */
+em {
+    font-weight: bold;
+}
+
+.article1 {
+    float: left;
+}
+.article2 {
+    float: right;
+}

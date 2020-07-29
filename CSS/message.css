@@ -1,0 +1,37 @@
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+#box {
+    padding: 3px;
+    border: 1px black;
+    margin: 2px;
+    border-radius: .25em;
+
+}
+
+.box1 {
+    background-color: #00bfff;
+    color: blue;
+}
+
+.box2 {
+    background-color: #71ea71;
+    color: #8cb449;
+}
+
+.box3 {
+    background-color: #64fa39;
+    color: #519313;
+}
+
+.box4 {
+    background-color: #e9967a;
+    color: #ff4500;
+}
