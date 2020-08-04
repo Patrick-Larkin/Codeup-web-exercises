@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="../CSS/media-queries.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #wide {
+            height: 300px;
+            background-color: blue;
+        }
+        #narrow {
+            height: 300px;
+            background-color: green;
+        }
+        @media screen and (max-width: 600px) {
+            #wide {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 600px) {
+            #narrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="wide">This is a wide screen</div>
+<div id="narrow">This is a narrow screen</div>
+</body>
+</html>
