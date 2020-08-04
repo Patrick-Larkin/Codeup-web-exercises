@@ -1,0 +1,12 @@
+.jumbotron {
+    height: 400px;
+}
+#transparent {
+    position: relative;
+    top: -250px;
+    opacity: 0.50;
+}
+
+h1 {
+    font-size: 75px;
+}
