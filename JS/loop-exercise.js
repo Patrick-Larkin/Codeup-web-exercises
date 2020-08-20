@@ -4,35 +4,46 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function returnEvenOddMessage(input) {
-  if(!Number.isInteger(input)) return input + " is invalid";
-  if(input%2 === 0) return input + " is even";
-  else return input + " is odd";
-}
-
-console.log(returnTenEvenOddMessage(getRandomInt(1, 100)));
-
-function returnTenEvenOddMessage() {
-  let message = '';
-  for(let i = 0; i < 10; i++) {
-    message += returnEvenOddMessage(getRandomInt(20, 200));
-    if(i < 9) message += '\n';
-  }
-  return message;
-}
 
 var totalCones = 50;
-iceCreamStand(totalCones);
-function iceCreamStand(totalCones) {
+sellCones(totalCones);
+function sellCones(totalCones) {
   do {
     var purchase = getRandomInt(1, 5);
     var conesLeft = totalCones -= purchase;
     if (purchase < conesLeft)  {
       console.log(purchase + " Cones Sold")
-    } else if (conesLeft === 0)  {
-      console.log("Yay I sold out of cones");
-    } else  {
+    } else {
       console.log("Sorry I only have " + conesLeft + " cones left");
     }
   } while (conesLeft > 0)
+  console.log("Yay I sold out of cones");
 }
+
+var work = "I can't believe I have to go to work on a Saturday";
+var number = 696969;
+var bool = true;
+var typeArray = [work, number , bool];
+console.log(typeArray[2]);
+console.log(typeof typeArray[0]);
+
+Any value you can put in a variable you can put in an array.
+
+
+var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// console.log(daysOfTheWeek[4]);
+
+
+var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+//
+// // loop through the array and log the values
+// for (var i = 0; i < daysOfTheWeek.length; i++) {
+//   console.log('Today is: ' + daysOfTheWeek[i]);
+// }
+
+var callback = function (item,index, array) {
+  console.log((index+1) + ": Today is " + item);
+}
+
+daysOfTheWeek.forEach(callback)
+shapes.forEach(callback)
