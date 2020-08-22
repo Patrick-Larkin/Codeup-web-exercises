@@ -61,16 +61,3 @@ function returnSecondIndex() {
 function returnLastIndex() {
 	return numbers[numbers.length - 1];
 }
-
-
-//
-// function lineQue() {
-// 	numbers.shift();
-// 	console.log(numbers.push(7));
-// }
-
-
-
-//
-// var star = ["Twinkle, twinkle, little star How I wonder what you are! Up above the world so high Like a diamond in the sky."];
-// console.log(star);
