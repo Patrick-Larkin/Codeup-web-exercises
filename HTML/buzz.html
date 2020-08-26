@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../JS/fiz-buzz.js"></script>
+</head>
+<body>
+<h1>Buzzz & Fizzz</h1>
+<button type="button" onClick="reloadFromCache()">Refresh</button>
+<button type="button" onClick="reloadFromServer()">Refresh!</button>
+<script>
+	function reloadFromCache () {
+			location.reload(); //reload page, possibly from cache
+			alert("From cache");
+		}
+	function reloadFromServer() {
+			location.reload(true); //reload page, from server
+			alert("From server");
+		}
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 id="demo"></h1>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function () {-->
+<!--		let hOne = document.getElementById('demo');-->
+<!--		hOne.innerHTML = 'IO Rocks';-->
+<!--	})();-->
+<!--</script>-->
+<!--//////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<!--<h1>List One</h1>-->
+<!--<ul>-->
+<!--    <li class="odd list-one-item">List 1, Item 1</li>-->
+<!--    <li class="even list-one-item">List 1, Item 2</li>-->
+<!--</ul>-->
+<!--<h1>List Two</h1>-->
+<!--<ul>-->
+<!--    <li class="odd list-two-item">List 2, Item 1</li>-->
+<!--    <li class="even list-two-item">List 2, Item 2</li>-->
+<!--</ul>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function () {-->
+<!--		// Get all elements with class 'even'-->
+<!--		let evenElements = document.getElementsByClassName('even');-->
+
+<!--		// Print the first element-->
+<!--		// alert(evenElements[0].innerHTML); // Prints li.even.list-one-item-->
+
+<!--		// Print all elements-->
+<!--		let output = ''-->
+<!--		for (let i = 0; i < evenElements.length; i++) {-->
+<!--			output += evenElements[i].outerHTML + '\n';-->
+<!--		}-->
+<!--		alert(output);-->
+<!--	})();-->
+<!--</script>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<!--<h1 id="output">List One</h1>-->
+<!--<ul>-->
+<!--    <li class="a list-one-item">List 1, Item 1</li>-->
+<!--    <li class="a list-one-item">List 1, Item 2</li>-->
+<!--</ul>-->
+<!--<h1>List Two</h1>-->
+<!--<ul>-->
+<!--    <li class="b list-two-item">List 2, Item 1</li>-->
+<!--    <li class="b list-two-item">List 2, Item 2</li>-->
+<!--</ul>-->
+<!--<h1 id="output"></h1>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function () {-->
+<!--		// Get all elements with class 'even'-->
+<!--		let evenElements = document.getElementsByClassName('b');-->
+
+<!--		// Print the first element-->
+<!--		// alert(evenElements[0].innerHTML); // Prints li.even.list-one-item-->
+
+<!--		// Print all elements-->
+<!--		let output = ''-->
+<!--		for (let i = 0; i < evenElements.length; i++) {-->
+<!--			output += evenElements[i].outerHTML + '\n';-->
+<!--		}-->
+<!--		let pout = document.getElementById('output');-->
+<!--		pout.innerHTML = output;-->
+<!--	})();-->
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<!--<h1 >List One</h1>-->
+<!--<ul>-->
+<!--    <li class="a list-one-item">List 1, Item 1</li>-->
+<!--    <li class="a list-one-item">List 1, Item 2</li>-->
+<!--</ul>-->
+<!--<h1>List Two</h1>-->
+<!--<ul>-->
+<!--    <li class="b list-two-item">List 2, Item 1</li>-->
+<!--    <li class="b list-two-item">List 2, Item 2</li>-->
+<!--</ul>-->
+<!--<h1 id="output"></h1>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function () {-->
+<!--		var listItems = document.getElementsByTagName('li')-->
+
+<!--      // Print all list items-->
+<!--		let output = ''-->
+<!--		for (let i = 0; i < listItems.length; i++) {-->
+<!--			output += listItems[i].innerHTML + '<br>';-->
+<!--		}-->
+<!--		let pout = document.getElementById('output');-->
+<!--		pout.innerHTML = output;-->
+<!--	})();-->
+<!--</script>-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+<!--<h1 id="output">Heading</h1>-->
+<!--<p>paragraph</p>-->
+<!--<p>paragraph</p>-->
+<!--<p>paragraph</p>-->
+
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function () {-->
+<!--		var listItems = document.getElementsByTagName('p');-->
+
+<!--		let output = ''-->
+<!--		for (let i = 0; i < paragraph.length; i++) {-->
+<!--			output += paragraph[i].innerHTML + '<br>';-->
+<!--		}-->
+<!--		let pout = document.getElementById('output');-->
+<!--		pout.innerHTML = output;-->
+<!--    })();-->
+<!--</script>-->
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+<!--<form name="login">-->
+<!--    <div>-->
+<!--        <label for="username">Username</label>-->
+<!--        <input id="username" name="username" type="text" value="user">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="password">Password</label>-->
+<!--        <input id="password" name="password" type="password">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <input type="submit">-->
+<!--    </div>-->
+<!--</form>-->
+<!--<button onClick="saveUsername()">Save Username</button>-->
+<!--<br>-->
+<!--<h1 id="out"></h1>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	let hout = document.getElementById('out');-->
+<!--	(function () {-->
+<!--		// get the "username" input-->
+<!--		let usernameInput = document.forms.login.username;-->
+<!--		hout.innerText = usernameInput.value;-->
+<!--	})();-->
+
+<!--	// log the value of the "username" input-->
+<!--	function saveUsername() {-->
+<!--		var usernameInput = document.forms.login.username;-->
+<!--		hout.innerText = usernameInput.value;-->
+<!--	}-->
+<!--</script>-->
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+<!--<form name="login">-->
+<!--    <div>-->
+<!--        <label for="text">Enter some test</label>-->
+<!--        <input id="text" name="sometext" type="text" value="user">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <input type="submit">-->
+<!--    </div>-->
+<!--</form>-->
+<!--<button onClick="saveText()">Save Username</button>-->
+<!--<br>-->
+<!--<h1 id="out"></h1>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	let hout = document.getElementById('out');-->
+<!--	(function () {-->
+<!--		// get the "username" input-->
+<!--		let usernameInput = document.forms.login.sometext;-->
+<!--		hout.innerText = usernameInput.value;-->
+<!--	})();-->
+
+<!--	// log the value of the "username" input-->
+<!--	function saveText() {-->
+<!--		let usernameInput = document.forms.login.sometext;-->
+<!--		hout.innerText = usernameInput.value;-->
+<!--	}-->
+<!--</script>-->
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+<!--<h1 id="main-heading">Hello World!</h1>-->
+<!--<div id="main-section">-->
+<!--    <p id="p1">A</p>-->
+<!--    <p id="p2">B</p>-->
+<!--</div>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    (function () {-->
+<!--    	var mainHeading = document.getElementById('p1');-->
+<!--    	var mainHeading = document.getElementById('demoText');-->
+<!--        p1.innerHTML = "<b>Hello Io</b>";-->
+<!--        p2.innerHTML = "<b>Hello Io</b>";-->
+<!--    })-->
+<!--</script>-->
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+<!--<a href="http://www.yahoo.com" id="search-link">Web Search</a>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function() {-->
+<!--		// Get the search link anchor by id-->
+<!--		var searchLink = document.getElementById("search-link");-->
+
+<!--		// Does an element have an attribute?-->
+<!--		console.log(searchLink.hasAttribute("href")); // Prints true-->
+<!--		console.log(searchLink.hasAttribute("class")); // Prints false-->
+
+<!--		// Get an attribute value-->
+<!--		console.log(searchLink.getAttribute("href")); // Prints "http://www.yahoo.com"-->
+
+<!--		// Add or modify an attribute-->
+<!--		searchLink.setAttribute("class", "btn btn-default");-->
+<!--		// Adds the attribute class and sets it to "btn btn-default"-->
+
+<!--		searchLink.setAttribute("href", "http://google.com");-->
+<!--		// Changes the href attribute to "http://google.com"-->
+
+<!--		// Remove an attribute-->
+<!--		searchLink.removeAttribute("class"); // Remove the class attribute-->
+<!--	})();-->
+<!--</script>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<!--MINI LAB-->
+<!--Using the code below:-->
+<!--Change the style of p1 to 'font-size: 4rem'-->
+<!--Get the data-* attribute from p2-->
+<!--Print the data-* attribute on the console log.-->
+
+<!--<body bgcolor="#faebd7">-->
+<!--<p id="p1">To be or not to be?</p>-->
+<!--<p id="p2" data-playname="Hamlet">That is the question.</p>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function() {-->
+<!--      var searchLink = document.getElementById("p1");-->
+
+<!--      console.log(searchLink.getAttribute("p1"))-->
+
+
+<!--		// Change the style of p1 to 'font-size: 4rem'-->
+<!--        let p1 = document.getElementById("p1");-->
+<!--        p1.setAttribute('p1', 'style:font-size: 4rem')-->
+
+<!--        // Get the data-* attribute from p2-->
+<!--        let p2 = document.getElementById('p1')-->
+<!--        let dataAttr = p2.getAttribute('data-playname')-->
+
+<!--		// Print the data-* attribute on the console log.-->
+<!--      alert(dataAttr)-->
+<!--	})();-->
+<!--</script>-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Sample Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function() {-->
+<!--		// Get the body element (notice we need to use index 0 of the array!)-->
+<!--		var bodyElement = document.getElementsByTagName('body')[0];-->
+
+<!--		// Change the body font color-->
+<!--		bodyElement.style.color = '#444'; // Dark grey-->
+
+<!--		bodyElement.style.backgroundColor = "#fefefe"; // Very light grey-->
+<!--		// We had to use [] syntax since the property name has a dash-->
+
+<!--		bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";-->
+<!--		// Replace dashes with camelCase to use standard . syntax-->
+<!--	})();-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<!--<ul>-->
+<!--    <li data-dbid="123">Item one</li>-->
+<!--    <li data-dbid="234">Item two</li>-->
+<!--</ul>-->
+<!--<script>-->
+<!--	"use strict";-->
+<!--	(function() {-->
+<!--		// Get the main heading h1 by id-->
+<!--		var listItems = document.getElementsByTagName('li');-->
+
+<!--		for (var i = 0; i < listItems.length; i++) {-->
+<!--			var dbId = listItems[i].getAttribute("data-dbid");-->
+<!--			console.log(dbId);-->
+<!--		}-->
+<!--		// Prints-->
+<!--		// 123-->
+<!--		// 234-->
+<!--	})();-->
+<!--/////////////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<script>
+	(function() {
+		"use strict";
+		// TODO: Uncomment next line and get the main header element by id
+		var mainHeader = document.getElementById("main-header");
+
+		// TODO: Set inner html of mainHeader to "JavaScript is Cool"
+            mainHeader.innerText = "JavaScript is Cool";
+		// TODO: Uncomment the next line and get the sub header element by id
+		var subHeader = document.getElementById("sub-header");
+
+		// TODO: Set the text color of subHeader to blue
+        subHeader.style.color = '#2943d9'
+
+		// TODO: Uncomment the next line and get all list items
+		var listItems = document.getElementsByTagName('li');
+
+		// TODO: Set text color on every other list item to grey
+        // TODO: Set text color of li with dbid = 1 to blue
+        for(var i = 0; i < listItems.length; i++) {
+	        if ((i+1)%2 === 0) {
+	        	listItems[i].style.color = "#62bf40";
+            }
+	        if(listItems[i].hasAttribute('data-dbid')) {
+	        	if (listItems[i].getAttribute('data-dbid') === '1') {
+	        		listItems[i].style.color = 'blue'
+                }
+            }
+        }
+
+		// TODO: Uncomment the next line and get all elements with class name sub-paragraph
+		var subParagraphs = document.getElementsByClassName('sub-paragraph');
+
+		// TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = "Mission Accomplished";
+	})();
+</script>
+</body>
+</html>
+
