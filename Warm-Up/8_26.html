@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Through DOM</title>
+</head>
+<body>
+<!--Write a webpage with an empty h2 element and a script that counts from 1 to 10, and puts the indexies from the loop into the element.-->
+<h2 id="h2_1">AAA</h2>
+<script>
+	"use strict";
+    (function () {
+	  let output = '';
+	  for (let i = 1; i < 11; i++) {
+		  output += "Loop iteration #" + i + "<br>";
+	  }
+	  let h2 = document.getElementById('h2_1');
+	  h2.innerHTML = output
+  })();
+</script>
+</body>
+</html>
