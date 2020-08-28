@@ -5,78 +5,57 @@
     <title>Title</title>
 </head>
 <body>
-Notes & Lab #1
+<!--Notes & Lab #1-->
 <button id="btn1">Click Me!</button>
-<button id="me">Click Me!</button>
-
-Notes #2
-<button id="btn1">Click Me!</button>
-<button id="btn2">Remove Event Listener</button>
-
-Notes & Lab #2
-<button id="btn1">Click Me!</button>
+<button id="me">Click Me Too!</button>
+<br><br><br>
+<!--Notes #2-->
 <button id="btn2">Click Me!</button>
+<button id="btn3">Remove Event Listener</button>
 
 <script>
 	'use strict';
-/////////////////////////////////////////////////////////////////NOTES-1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	Add event listener
-	create a handler function
-		var listen = function (event) {
-			alert('You clicked this button');
-		}
-
-		// register the listener to handle clicks on btn1
-		document.getElementById("btn1").addEventListener("click", listen);
-
-/////////////////////////////////////////////////////////////////MINI LAB-1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// 		MINI LAB
-// 		Create a button with the id='me'
-// 		Create a listener named 'listenToMe' that says, "You clicked me."
-// 		Register the listener 'listenToMe' to be called when the element 'me' is clicked.
-	var listenToMe = function (event) {
-		alert('You clicked me');
+	//////////////////////////////////////////////////////////////////NOTES-1 & LABS-1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //Add event listener
+    //Create a listener named 'listen' that says, "You clicked me."
+	var listen = function (event) {
+		alert('You clicked this button');
 	}
-	document.getElementById("me").addEventListener("click", listenToMe);
 
-/////////////////////////////////////////////////////////////////NOTES-2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	// register the listener to handle clicks on btn1
+    document.getElementById("btn1").addEventListener("click", listen);
 
-	var listener = function (event) {
+
+    // 		MINI LAB
+	// 		Create a button with the id='me'
+	// 		Create a listener named 'listenToMe' that says, "You clicked me."
+	// 		Register the listener 'listenToMe' to be called when the element 'me' is clicked.
+	var meToo = function (event) {
+		alert('You clicked me Too');
+	}
+	document.getElementById("me").addEventListener("click", meToo);
+
+	/////////////////////////////////////////////////////////////////NOTES-2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //Remove an event listener
+    //Create a listener named 'clicked' that says, "You clicked me."
+	var clicked = function (event) {
 		alert('You clicked the button!');
-	}
-
-	// add event listener to btn1
-	var btn1 = document.getElementById('btn1');
-	btn1.addEventListener('click', listener);
-
-	var remover = function (event) {
-		// remove event listener from btn1
-		btn1.removeEventListener('click', listener);
-		console.log('Event listener removed.');
 	}
 
 	// add event listener to btn2
 	var btn2 = document.getElementById('btn2');
-	btn2.addEventListener('click', remover);
+	btn2.addEventListener('click', clicked);
 
-////////////////////////////////////////////////////////////////////MINI LAB-2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// 		MINI LAB
-//  	Add a second button to you first lab.
-// 		Write a second event listener to remove 'listenToMe' from the 'me'.
-// 		Register the snd listener to be called when the 2nd button is clicked.
+    //Create a listener named 'remover' removes event clicked, and logs "You clicked me."
+	var remover = function (event) {
+		// remove event listener from btn1
+		btn2.removeEventListener('click', clicked);
+		console.log('Event listener removed.');
+	}
 
-var alertEvent = function (event) {
-	alert('You clicked me');
-}
-
-var btn1 = document.getElementById("btn1")
-btn1.addEventListener("click", alertEvent);
-var remover = function () {
-	btn1.removeEventListener("click", alertEvent);
-}
-
-var btn2 = document.getElementById("btn2");
-btn2.addEventListener("click", remover)
+	// add event listener to btn3
+	var btn3 = document.getElementById('btn3');
+	btn3.addEventListener('click', remover);
 </script>
 </body>
 </html>
