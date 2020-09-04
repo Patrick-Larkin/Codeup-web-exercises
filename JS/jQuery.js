@@ -3,34 +3,63 @@
 	$(document).ready(function () {
 /////////////////////////////////////////////////////////////Exercise #1 ID Selector \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
-		$().ready(function () {
-			let contents = $('#codeup').html();
-			alert(contents);
-			$('#codeup').html('<strong>The switch</strong>');
-		});
-
+		// $().ready(function () {
+		// 	let contents = $('#codeup').html();
+		// 	alert(contents);
+		// 	$('#codeup').html('<strong>The switch</strong>');
+		// });
 
 /////////////////////////////////////////////////////////////Exercise #2 CLASS Selector \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-		$().ready(function () {
-			alert("The DOM has finished loading!")
-		});
-		$().ready(function () {
-			$('.important').css('background-color', '#ff0');
-			$('.important').css('color', '#1e16d2');
-		});
-
+		// $().ready(function () {
+		// 	alert("The DOM has finished loading!")
+		// });
+		// $().ready(function () {
+		// 	$('.important').css('background-color', '#ff0');
+		// 	$('.important').css('color', '#1e16d2');
+		// });
 
 /////////////////////////////////////////////////////////////Exercise #3 Element Selector \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-		$('p').css('font-size', '14px');
-
+		// $('p').css('font-size', '14px');
 
 /////////////////////////////////////////////////////////////Exercise #4 Multiple Selectors \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-		$('.important, p').css('background-color', '#FF0');
+
+		// $('.important, p').css('background-color', '#FF0');
 
 /////////////////////////////////////////////////////////////Exercise #5 All Selector \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-		$('*').css('border', '1px solid #F00');
-	})();
+
+		// $('*').css('border', '1px solid #F00');
+
+/////////////////////////////////////////////////////////////////Exercise #6-1 ID Selector\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+		// let contents = $('#h1').html();
+		// alert(contents);
+		// let contents2 = $('#p').html();
+		// alert(contents2);
+		// let contents3 = $("#li").html();
+		// alert(contents3);
+
+////////////////////////////////////////////////////////////////Exercise #6-2 Class Selector\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+	  // $(".codeup").css('border', '1px solid #000');
+
+///////////////////////////////////////////////////////////////Exercise #6-3 Element Selector\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+		// let h1 = $('h1').html()
+		// alert(h1);
+		// $('h1').css('background-color', '#FF0');
+		// $('p').css('background-color', '#FF0');
+		// $('li').css('background-color', '#FF0');
+		// $('ul').css('font-size', '20px');
+
+/////////////////////////////////////////////////////////////Exercise #6-4 Multiple Selectors \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+		// $('h1, p, li').css('background-color', '#448ab0');
+		// $('li').css('font-size', '20px');
+
+//////////////////////////////////////////////////////////////////////////End\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+})();
 })();
