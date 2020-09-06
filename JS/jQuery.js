@@ -60,6 +60,72 @@
 		// $('h1, p, li').css('background-color', '#448ab0');
 		// $('li').css('font-size', '20px');
 
+
+//////////////////////////////////////////////////////////////////////////Events Lecture\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+		// $('#codeup').click(function() {
+		// 	alert('h1 with id "codeup" was clicked');
+		// });
+
+		//This is the same code
+		// var ele = document.getElementById('my-element');
+		// ele.addEventListener('click', function(e) {
+		// 	alert('My element was clicked!');
+		// });
+		//
+		// $('#codeup').hover(
+		// 		function() {
+		// 			$(this).css('background-color', '#FF0');
+		// 		},
+		// 		function() {
+		// 			$(this).css('background-color', '#FFF');
+		// 		}
+		// );
+
+//////////////////////////////////////////////////////////////////////////Exercise #5 Mouse Events\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+		// $('h1').click(function () {
+		// 	$(this).css('background-color', '#1a3888')
+		// })
+		// $('p').click(function () {
+		// 	$(this).css('background-color', '#68b854')
+		// })
+		// $('p').dblclick(function () {
+		// 	$(this).css('font-size', '200px')
+		// })
+		// $('ul').click(function () {
+		// 	$(this).css('background-color', '#d28025')
+		// })
+		// $('li').hover(
+		// 		function() {
+		// 			$(this).css('background-color', '#af0bdd');
+		// 		},
+		// 		function() {
+		// 			$(this).css('background-color', '');
+		// 		}
+		// );
+		// $('div').click(function () {
+		// 	$(this).css('background-color', '#14b58f')
+		// })
+
+
+//////////////////////////////////////////////////////////////////////////Exercise #5 Keyboard Events\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+		$(document).keyup(function(event){
+
+		});
+		let konami = [38, 38, 40, 37, 39, 37, 39, 66, 65]
+
+		alert("You have added 30 lives!")
+		$(document).ready(function(){
+			$(this).css('background-image', "src('../IMG/contra_shot_1.png')");
+		});
+
+
+
+
 //////////////////////////////////////////////////////////////////////////End\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 })();
 })();
