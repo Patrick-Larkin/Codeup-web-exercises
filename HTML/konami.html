@@ -5,70 +5,126 @@
     <link rel="stylesheet" href="../CSS/konami.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="../JS/konami.js"></script>
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
 </head>
 
 <body>
 <!--Start Main-->
 <h1>Konami Code</h1>
-<h2 class="winAlert">Rip & Tear!</h2>
-<div class="winAlert">
-    <img class="doomGif" src="../Media/doomscreen.jpeg"/>
+<img id="konami-img" src="../Media/IMG/Konami_Code-02.png" height="75" width="980"/>
+<br>
+<div class="nes-container is-rounded is-dark">
+    <p>The Konami Code (コナミコマンド, Konami Komando?, lit. "Konami Command") is a special combination of buttons that appears in several Konami games. It was widely popularized due to its inclusion in the NES home version of Contra (1988), where it allowed the player to obtain 30 free lives.</p>
 </div>
-<div class="loseAlert">
-    <h2>You lose big idiot</h2>
-    <img src="../Media/sad-Doot.png" height="512" width="438"/>
-</div>
-<!--End Main-->
+<br>
+<div class="default">
+    <section class="hearts-defualt">
+        <!-- heart -->
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large is-half heart"></i>
+        <i class="nes-icon is-large is-transparent heart"></i>
+        <i class="nes-icon is-large heart is-empty"></i>
+    </section>
+    <!--Start Controller-->
+    <!--Provided from:https://codepen.io/injectilo/pen/MYJrmm&ndash;&gt;-->
+    <div class="controller">
+        <div class="base">
+            <div class="front">
+                <div class="decoration">
+                    <!--Start Controller Text-->
+                    <div class="controller-text">
+                        <div class="st-a">A</div>
+                        <div class="st-b">B</div>
+                        <div class="st-select">SELECT</div>
+                        <div class="st-start">START</div>
+                    </div>
+                    <!--End Controller Text -->
+                    <div class="decoration-central">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <!--Start Cross-->
+                <div class="cross">
+                    <div class="circle"></div>
+                    <div class="horizontal">
+                        <div class="arrowlf"></div>
+                        <div class="arrowrh"></div>
+                    </div>
+                    <div class="vertical">
+                        <div class="arrowlf"></div>
+                        <div class="arrowrh"></div>
+                    </div>
+                    <div class="back-cross">
+                        <div class="horiz"></div>
+                        <div class="vert"></div>
+                    </div>
+                </div>
+                <!--End Cross-->
 
-<!--Start Controller-->
-<div class="cable"></div>
-<div class="controller">
-    <div class="base">
-        <div class="front">
-            <div class="decoration">
-                <!--Start Controller Text-->
-                <div class="controller-text">
-                    <div class="st-a">A</div>
-                    <div class="st-b">B</div>
-                    <div class="st-select">SELECT</div>
-                    <div class="st-start">START</div>
+                <!--Start Buttons-->
+                <div class="buttons-a-b">
+                    <div class="btn-border"><div class="btn-round a"></div></div>
+                    <div class="btn-border"><div class="btn-round b"></div></div>
                 </div>
-                <!--End Controller Text -->
-                <div class="decoration-central">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="buttons-select">
+                    <div class="btn-central select">Ignore this</div>
+                    <div class="btn-central start"></div>
                 </div>
-            </div>
-            <!--Start Cross-->
-            <div class="cross">
-                <div class="circle"></div>
-                <div class="horizontal">
-                    <div class="arrowlf"></div>
-                    <div class="arrowrh"></div>
-                </div>
-                <div class="vertical">
-                    <div class="arrowlf"></div>
-                    <div class="arrowrh"></div>
-                </div>
-                <div class="back-cross">
-                    <div class="horiz"></div>
-                    <div class="vert"></div>
-                </div>
-            </div>
-            <div class="buttons-a-b">
-                <div class="btn-border"><div class="btn-round a"></div></div>
-                <div class="btn-border"><div class="btn-round b"></div></div>
-            </div>
-            <div class="buttons-select">
-                <div class="btn-central select"></div>
-                <div class="btn-central start"></div>
+                <!--End Buttons-->
             </div>
         </div>
     </div>
+    <!--End Controller-->
 </div>
-<!--End Controller-->
+<!--End Default-->
+
+<!--Start Win-->
+<div class="winAlert">
+    <h2 class="winAlert">Rip & Tear!</h2>
+    <section class="hearts-max">
+        <!-- heart -->
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+        <i class="nes-icon is-large heart"></i>
+    </section>
+    <img class="doomGif" src="../Media/doomscreen.jpeg"/>
+</div>
+<!--End Win-->
+
+<!--End Hold This L-->
+<div class="loseAlert">
+    <h2>You lose big idiot</h2>
+    <section class="hearts-lose">
+        <!-- heart -->
+        <i class="nes-icon is-large heart is-empty"></i>
+        <i class="nes-icon is-large heart is-empty"></i>
+        <i class="nes-icon is-large heart is-empty"></i>
+    </section>
+    <img src="../Media/sad-Doot.png" height="512" width="438"/>
+</div>
+<!--End Hold This L-->
 </body>
 </html>

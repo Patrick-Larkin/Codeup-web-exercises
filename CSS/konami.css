@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron);
+/*@import "./node_modules/nes.css/css/nes.css"*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 h2 {
-    background-color: #e21111;
+    font-family: 'Press Start 2P', cursive !important;
     color: #ffffff;
     font-size: 50px;
     text-align: center;
@@ -18,19 +20,21 @@ div {
     text-align: center;
 }
 
-
 html, body {
     font-family: monospace;
-    background-image: ../IMG/pixel.jpg;
+    background-image: ../Media/pixel.jpg;
     height: 99%;
 }
 
+
+
+/*Start controller into the unknown*/
 .controller {
     width: 500px;
     margin: 0 auto;
     top: 30%;
     position: relative;
-
+    font-family: ;
 }
 
 .base {
@@ -39,7 +43,6 @@ html, body {
     background-color: #e0ded4;
     border-radius: 4px;
     z-index: 1;
-
 }
 
 .front {
@@ -103,7 +106,6 @@ html, body {
     background-color: #252725;
     z-index: 2;
     border-radius: 1px;
-
 }
 
 .vertical {
@@ -120,7 +122,6 @@ html, body {
     border-radius: 1px;
     transform: rotate(90deg);
     box-shadow: inset 3px 0px 0px 0px rgba(255, 255, 255, 0.61);
-
 }
 
 .arrowlf {
@@ -134,7 +135,6 @@ html, body {
     border-bottom: 10px solid transparent;
     opacity: 0.3;
     box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.61);
-
 }
 
 .arrowlf:before {
@@ -145,7 +145,6 @@ html, body {
     position: absolute;
     left: -20px;
     top: -6px;
-
 }
 
 .arrowrh {
@@ -169,7 +168,6 @@ html, body {
     position: absolute;
     left: 10px;
     top: -6px;
-
 }
 
 .circle {
@@ -274,7 +272,7 @@ html, body {
 }
 
 
-.controller-text {
+.stickers {
     font-family: 'Orbitron', sans-serif;
     color: #DF2015;
     position: absolute;

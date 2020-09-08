@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.carousel {
+    height: 600px;
+}
