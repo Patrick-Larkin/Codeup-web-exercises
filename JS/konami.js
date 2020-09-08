@@ -11,15 +11,15 @@
 		function konamiDecoder() {
 			var userInput = ''
 			var code = "3838404037393739666513"
-			var audio = new Audio('../IMG/8-bit.mp3');
-			var audioLose = new Audio('audio/smb_gameover.wav')
+			var winMusic = new Audio('../Media/8-bit.mp3');
+			var loseMusic = new Audio('../Media/Doot.mp3');
 			$(document).keydown(function () {
 				userInput += ("" + event.keyCode);
 				if (userInput === code) {
-					audio.play();
+					winMusic.play();
 					$(".winAlert").show();
 				} else if (userInput.length > 22){
-					audioLose.play()
+					loseMusic.play()
 					$(".loseAlert").show();
 				}
 			});
