@@ -1,6 +1,6 @@
-"use strict";
-(function () {
-	$(document).ready(function () {
+// "use strict";
+// (function ()
+	// $(document).ready(function () {
 /////////////////////////////////////////////////////////////Exercise #1 ID Selector \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 		// $().ready(function () {
@@ -112,20 +112,20 @@
 
 //////////////////////////////////////////////////////////////////////////Exercise #5 Keyboard Events\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
-		$(document).keyup(function(event){
-
-		});
-		let konami = [38, 38, 40, 37, 39, 37, 39, 66, 65]
-
-		alert("You have added 30 lives!")
-		$(document).ready(function(){
-			$(this).css('background-image', "src('../IMG/contra_shot_1.png')");
-		});
+		//
+		// $(document).keyup(function(event){
+		//
+		// });
+		// let konami = [38, 38, 40, 37, 39, 37, 39, 66, 65]
+		//
+		// alert("You have added 30 lives!")
+		// $(document).ready(function(){
+		// 	$(this).css('background-image', "src('../IMG/contra_shot_1.png')");
+		// });
 
 
 
 
 //////////////////////////////////////////////////////////////////////////End\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-})();
-})();
+// })();
+// })();
