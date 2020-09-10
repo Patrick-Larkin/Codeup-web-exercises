@@ -51,3 +51,7 @@ header .overlay {
         display: none;
     }
 }
+
+a {
+    color: white;
+}
