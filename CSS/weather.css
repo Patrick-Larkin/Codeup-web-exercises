@@ -93,6 +93,30 @@ form:hover .fa{
     color: white;
 }
 
+.forecastCard {
+    width: 240px;
+    background-color: white;
+}
+.temp-and-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.date {
+    background-color: rgb(209, 114, 111);
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    background-color: DCDCDC;
+}
+
+.info div {
+    border: solid black 1px;
+}
+
 #map {
     /* the width and height may be set to any size */
     width: 100%;

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../CSS/weather.css">
 
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 
 <body>
@@ -30,8 +31,7 @@
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
 
 
-
-<!--Start-->
+<!--Start NavBar-->
 <nav class="navbar">
     <div class="nav-logo">
         <h1>Wishful Weather</h1>
@@ -39,60 +39,42 @@
     </div>
     <div class="searchbar-container">
         <form class action="">
+            <!--Todo:Retrieve innerHTML link to both map search and weather search-->
+            <!--Todo:prevent typos/invalid inputs-->
+            <!--Todo:Style-->
             <input type="search">
+            <!--Todo:Event listener link to trigger both map search and weather search-->
+            <!--Todo:Style-->
             <i class="fa fa-search"></i>
         </form>
     </div>
-
 </nav>
+<!--End NavBar-->
 
 
-</nav>
-<!--Todo: Bottom margin-->
+
+
 <!--Start Main-->
 <main>
-    <!--Start Searchbar-->
-    <!--Todo: Bottom margin-->
-    <div>
-        Place<input type="text" id="inputLocation" placeholder="City, State">
-        <!--Todo:Retrieve innerHTML link to both map search and weather search-->
-        <!--Todo:prevent typos/invalid inputs-->
-        <!--Todo:Style-->
-        <input type="submit" value="Submit" id="btn1">
-        <!--Todo:Event listener link to trigger both map search and weather search-->
-        <!--Todo:Style-->
-    </div>
-    <!--End Searchbar-->
-
-
     <!--Start 5 Day Forecast-->
     <!--Todo:5 more-->
-    <div>
-        <div class="forecastCard">
-            <!--Start Header-->
-            <!--Todo:Style centered, bg-color-grey-->
-            <header>{YY/MM/DD}</header>
-            <!--Todo:Link to forecast dates-->
-            <!--End Header-->
-
-            <!--Start Section-->
-            <!--Todo:Style centered-->
-            <section>
-                <div id="temperature"></div>
-                <p>IMG of current weather</p>
-            </section>
-            <!--End Main-->
-
-            <!--Start Main-->
-            <!--Todo:Style bg-color-grey, border, bold-->
-            <main>
-                <div id="description"></div>
-                <div id="humidity"></div>
-                <div id="wind"></div>
-                <div id="pressure"></div>
-            </main>
-            <!--End Main-->
+    <div class="forecastCard">
+        <div class="date">
+            <p>Content</p>
         </div>
+        <div class="temp-and-icon">
+            <div id="temperature"></div>
+            <div>IMG of current weather</div>
+        </div>
+        <div class="info">
+            <i class="fal fa-raindrops"></i>
+            <div id="description"></div>
+            <div id="humidity"></div>
+            <i class="fas fa-wind"></i>
+            <div id="wind"></div>
+            <div id="pressure"></div>
+        </div>
+        <!--End Main-->
     </div>
     <!--Start 5 Day Forecast-->
 </main>
@@ -105,10 +87,10 @@
 
 <script>
 	$(document).ready(function () {
-		$('#btn1').click(function () {
-			let inputLocation = $('#inputLocation').html();
-			alert(inputLocation);
-		});
+		// $('#btn1').click(function () {
+		// 	let inputLocation = $('#inputLocation').html();
+		// 	alert(inputLocation);
+		// });
 
 		mapboxgl.accessToken = MAPBOX_TOKEN;
 		var map = new mapboxgl.Map({
@@ -126,40 +108,38 @@
 		}).done(function (data) {
 			console.log(data);
 			//Start Loop
-			for (let i = 0; i < data.length; i++) {
-						let cityHTML = '<p>' + 'Current City: ' + data.name + '</p>';
-						$('#currentCity').html(cityHTML);
+			let cityHTML = '<p>' + 'Current City: ' + data.name + '</p>';
+			$('#currentCity').html(cityHTML);
 
-						let tempHTML = '<p>' + data.main.temp_min + " / " + data.main.temp_max + '</p>';
-						$('#temperature').html(tempHTML);
+			let tempHTML = '<p>' + data.main.temp_min + " / " + data.main.temp_max + '</p>';
+			$('#temperature').html(tempHTML);
 
-						let descriptionHTML = '<p>' + 'Description: ' + data.weather[0].description + '</p>';
-						$('#description').html(descriptionHTML);
+			let descriptionHTML = '<p>' + 'Description: ' + data.weather[0].description + '</p>';
+			$('#description').html(descriptionHTML);
 
-						let HumiditynHTML = '<p>' + 'Humidity: ' + data.main.humidity + '</p>';
-						$('#humidity').html(HumiditynHTML);
+			let HumiditynHTML = '<p>' + 'Humidity: ' + data.main.humidity + '</p>';
+			$('#humidity').html(HumiditynHTML);
 
-						let windHTML = '<p>' + 'Wind: ' + data.wind.speed + '</p>';
-						$('#wind').html(windHTML);
+			let windHTML = '<p>' + 'Wind: ' + data.wind.speed + '</p>';
+			$('#wind').html(windHTML);
 
-						let pressureHTML = '<p>' + 'Pressure: ' + data.main.pressure + '</p>';
-						$('#pressure').html(pressureHTML);
-          }
-		//End Conditional
-					function searchToggle(obj, evt){
-						var container = $(obj).closest('.search-wrapper');
-						if(!container.hasClass('active')){
-							container.addClass('active');
-							evt.preventDefault();
-						}
-						else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
-							container.removeClass('active');
-							// clear input
-							container.find('.search-input').val('');
-						}
-					}
+			let pressureHTML = '<p>' + 'Pressure: ' + data.main.pressure + '</p>';
+			$('#pressure').html(pressureHTML);
+
+			//End Conditional
+			function searchToggle(obj, evt) {
+				var container = $(obj).closest('.search-wrapper');
+				if (!container.hasClass('active')) {
+					container.addClass('active');
+					evt.preventDefault();
+				} else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+					container.removeClass('active');
+					// clear input
+					container.find('.search-input').val('');
+				}
+			}
 		});
-    });
+	});
 </script>
 
 <!--TODO:Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
