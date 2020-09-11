@@ -1,80 +1,192 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<script>-->
+<!--	let inventory = [-->
+<!--		{-->
+<!--			title: "Screwdriver",-->
+<!--			price: 7,-->
+<!--			quantity: 100-->
+<!--		},-->
+<!--		{-->
+<!--            title: "Hammer",-->
+<!--			price: 5,-->
+<!--			quantity: 50-->
+<!--		},-->
+<!--		{-->
+<!--			title: "Saw",-->
+<!--			price: 20,-->
+<!--			quantity: 45-->
+<!--		},-->
+<!--		{-->
+<!--			title: "BullDozer",-->
+<!--			price: 67000,-->
+<!--			quantity: 2-->
+<!--		},-->
+<!--	]-->
+
+<!--	function findGreatestPrice (inventory) {-->
+<!--		let highestPrice = 0;-->
+<!--		for (let i = 0; i < inventory.length; i++) {-->
+<!--			if (highestPrice < inventory[i].price) {-->
+<!--				highestPrice = inventory[i]-->
+<!--			}-->
+<!--		}-->
+<!--        // '<h1>' + 'The most expensive item is the' + inventory.title +  + '$' + highestPrice + '</h1>';-->
+<!--	}-->
+
+<!--	function findLowestPrice (inventory) {-->
+<!--		let lowestPrice = {price: Infinity};-->
+<!--		for (let i = 0; i < inventory.length; i++) {-->
+<!--			if (lowestPrice > inventory[i].price) {-->
+<!--				lowestPrice = inventory[i]-->
+<!--			}-->
+<!--		}-->
+<!--		return lowestPrice;-->
+<!--	}-->
+
+<!--		function findGreatestQuantity (inventory) {-->
+<!--			let highestQuantity = 0;-->
+<!--			for (let i = 0; i < inventory.length; i++) {-->
+<!--				if (highestQuantity < inventory[i].quantity) {-->
+<!--					highestQuantity = inventory[i]-->
+<!--				}-->
+<!--			}-->
+<!--			return highestQuantity;-->
+<!--		}-->
+
+<!--		function findLowestQuantity (inventory) {-->
+<!--			let lowestQuantity = Infinity;-->
+<!--			for (let i = 0; i < inventory.length; i++) {-->
+<!--				if (lowestQuantity > inventory[i].quantity) {-->
+<!--					lowestQuantity = inventory[i]-->
+<!--				}-->
+<!--			}-->
+<!--			return lowestQuantity;-->
+<!--		}-->
+
+
+<!--		console.log(findGreatestPrice(inventory))-->
+<!--        console.log(findLowestPrice(inventory))-->
+<!--		console.log(findGreatestQuantity(inventory))-->
+<!--		console.log(findLowestQuantity(inventory))-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title></title>-->
+<!--    <meta charset="utf8">-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 id="user_display">show the input here with button click</h1>-->
+<!--<input id="user_input">-->
+<!--<button id="clickme">click me</button>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--	"use strict"-->
+<!--		$('#clickme').click(function(){-->
+<!--			$('#user_display').html($('#user_input').val());-->
+<!--		});-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>jQuery</title>-->
+<!--    <meta charset="utf8">-->
+<!--</head>-->
+<!--<body>-->
+<!--<p>Paragraph #1</p>-->
+<!--<p>Paragraph #2</p>-->
+<!--<p>Paragraph #3</p>-->
+<!--<p>Paragraph #4</p>-->
+<!--<p>Paragraph #5</p>-->
+<!--<p>Paragraph #6</p>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--<script>-->
+<!--	var $paragraphs = $('p');-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Example jQuery Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--<script>-->
+<!--	"use strict";-->
+
+<!--	$(document).ready(function() {-->
+<!--		$('#codeup').hover(-->
+<!--				function() {-->
+<!--					$(this).css('background-color', '#FF0');-->
+<!--				},-->
+<!--				function() {-->
+<!--					$(this).css('background-color', '#FFF');-->
+<!--				}-->
+<!--		);-->
+<!--	});-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Example jQuery Page</title>
+    <style>
+        .centered {
+            text-align: center;
+        }
+        .highlighted {
+            background-color: #FF0;
+        }
+    </style>
 </head>
 <body>
+<h1>Example Page</h1>
+<div class="centered important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+</div>
+<p class="centered important">This is also very important.</p>
+<a href="#" id="highlight-important">Click to highlight important text.</a>
 
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-	let inventory = [
-		{
-			title: "Screwdriver",
-			price: 7,
-			quantity: 100
-		},
-		{
-            title: "Hammer",
-			price: 5,
-			quantity: 50
-		},
-		{
-			title: "Saw",
-			price: 20,
-			quantity: 45
-		},
-		{
-			title: "BullDozer",
-			price: 67000,
-			quantity: 2
-		},
-	]
+	"use strict";
 
-	function findGreatestPrice (inventory) {
-		let highestPrice = 0;
-		for (let i = 0; i < inventory.length; i++) {
-			if (highestPrice < inventory[i].price) {
-				highestPrice = inventory[i]
-			}
-		}
-        // '<h1>' + 'The most expensive item is the' + inventory.title +  + '$' + highestPrice + '</h1>';
-	}
-
-	function findLowestPrice (inventory) {
-		let lowestPrice = {price: Infinity};
-		for (let i = 0; i < inventory.length; i++) {
-			if (lowestPrice > inventory[i].price) {
-				lowestPrice = inventory[i]
-			}
-		}
-		return lowestPrice;
-	}
-
-		function findGreatestQuantity (inventory) {
-			let highestQuantity = 0;
-			for (let i = 0; i < inventory.length; i++) {
-				if (highestQuantity < inventory[i].quantity) {
-					highestQuantity = inventory[i]
-				}
-			}
-			return highestQuantity;
-		}
-
-		function findLowestQuantity (inventory) {
-			let lowestQuantity = Infinity;
-			for (let i = 0; i < inventory.length; i++) {
-				if (lowestQuantity > inventory[i].quantity) {
-					lowestQuantity = inventory[i]
-				}
-			}
-			return lowestQuantity;
-		}
-
-
-		console.log(findGreatestPrice(inventory))
-        console.log(findLowestPrice(inventory))
-		console.log(findGreatestQuantity(inventory))
-		console.log(findLowestQuantity(inventory))
+	$(document).ready(function() {
+		$('#highlight-important').click(function(event) {
+			event.preventDefault();
+			$('.important').addClass('highlighted');
+		});
+	});
 </script>
 </body>
 </html>
