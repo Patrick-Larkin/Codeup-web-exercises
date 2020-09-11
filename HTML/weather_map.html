@@ -35,7 +35,7 @@
 <nav class="navbar">
     <div class="nav-logo">
         <h1>Wishful Weather</h1>
-        <img src="../Media/IMG/weather.jpg" class="logo">
+        <img src="../Media/IMG/weather.jpg" class="logo" alt="logo">
     </div>
     <div class="searchbar-container">
         <form class action="">
@@ -50,8 +50,6 @@
     </div>
 </nav>
 <!--End NavBar-->
-
-
 
 
 <!--Start Main-->
@@ -80,7 +78,6 @@
 </main>
 <!--End Main-->
 
-
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 <!--Todo:Event listener click on map-->
@@ -93,52 +90,56 @@
 		// });
 
 		mapboxgl.accessToken = MAPBOX_TOKEN;
-		var map = new mapboxgl.Map({
+		let map = new mapboxgl.Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v9',
 			zoom: 10,
 			center: [-98.4916, 29.4252]
 		});
 
-		//5 day weather forcast
-		$.get("http://api.openweathermap.org/data/2.5/weather", {
-			APPID: OPEN_WEATHER_MAP_KEY,
-			q: "San Antonio, US",
-			units: "imperial"
-		}).done(function (data) {
-			console.log(data);
-			//Start Loop
-			let cityHTML = '<p>' + 'Current City: ' + data.name + '</p>';
-			$('#currentCity').html(cityHTML);
-
-			let tempHTML = '<p>' + data.main.temp_min + " / " + data.main.temp_max + '</p>';
-			$('#temperature').html(tempHTML);
-
-			let descriptionHTML = '<p>' + 'Description: ' + data.weather[0].description + '</p>';
-			$('#description').html(descriptionHTML);
-
-			let HumiditynHTML = '<p>' + 'Humidity: ' + data.main.humidity + '</p>';
-			$('#humidity').html(HumiditynHTML);
-
-			let windHTML = '<p>' + 'Wind: ' + data.wind.speed + '</p>';
-			$('#wind').html(windHTML);
-
-			let pressureHTML = '<p>' + 'Pressure: ' + data.main.pressure + '</p>';
-			$('#pressure').html(pressureHTML);
-
-			//End Conditional
-			function searchToggle(obj, evt) {
-				var container = $(obj).closest('.search-wrapper');
-				if (!container.hasClass('active')) {
-					container.addClass('active');
-					evt.preventDefault();
-				} else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
-					container.removeClass('active');
-					// clear input
-					container.find('.search-input').val('');
-				}
-			}
+		// Click function placing a marker, and retrieving the coordinates
+		map.on('click', function (e) {
+			console.log('A click event has occurred at ' + e.lngLat);
+			let coordintes
+			var location = new mapboxgl.Marker().setLngLat(e.lngLat).addTo(map);
+			forcast(e.lngLat);
 		});
+
+		let forcast = function (coordinates) {
+			console.log(coordinates)
+			let longitude = coordinates.lng
+			let latitude = coordinates.lat
+			forcastCards(longitude, latitude);
+			//5 day weather forcast
+		}
+
+		let forcastCards = function (longitude, latitude) {
+			$.get("https://api.openweathermap.org/data/2.5/onecall", {
+				APPID: OPEN_WEATHER_MAP_KEY,
+				lat: latitude,
+				lon: longitude,
+				units: "imperial"
+			}).done(function (data) {
+				console.log(data);
+				//Start Loop
+                // for(let  = 0; i < daily[].length; i++){
+				let tempHTML = '<p>' + data.main.temp_min + " / " + data.daily[i].main.temp_max + '</p>';
+				$('#temperature').html(tempHTML);
+
+				let descriptionHTML = '<p>' + 'Description: ' + data.weather[0].description + '</p>';
+				$('#description').html(descriptionHTML);
+
+				let HumiditynHTML = '<p>' + 'Humidity: ' + data.main.humidity + '</p>';
+				$('#humidity').html(HumiditynHTML);
+
+				let windHTML = '<p>' + 'Wind: ' + data.wind.speed + '</p>';
+				$('#wind').html(windHTML);
+
+				let pressureHTML = '<p>' + 'Pressure: ' + data.main.pressure + '</p>';
+				$('#pressure').html(pressureHTML);
+			})
+			//End Loop
+		}
 	});
 </script>
 

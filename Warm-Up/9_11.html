@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+	let inventory = [
+		{
+			title: "Screwdriver",
+			price: 7,
+			quantity: 100
+		},
+		{
+            title: "Hammer",
+			price: 5,
+			quantity: 50
+		},
+		{
+			title: "Saw",
+			price: 20,
+			quantity: 45
+		},
+		{
+			title: "BullDozer",
+			price: 67000,
+			quantity: 2
+		},
+	]
+
+	function findGreatestPrice (inventory) {
+		let highestPrice = 0;
+		for (let i = 0; i < inventory.length; i++) {
+			if (highestPrice < inventory[i].price) {
+				highestPrice = inventory[i]
+			}
+		}
+        // '<h1>' + 'The most expensive item is the' + inventory.title +  + '$' + highestPrice + '</h1>';
+	}
+
+	function findLowestPrice (inventory) {
+		let lowestPrice = {price: Infinity};
+		for (let i = 0; i < inventory.length; i++) {
+			if (lowestPrice > inventory[i].price) {
+				lowestPrice = inventory[i]
+			}
+		}
+		return lowestPrice;
+	}
+
+		function findGreatestQuantity (inventory) {
+			let highestQuantity = 0;
+			for (let i = 0; i < inventory.length; i++) {
+				if (highestQuantity < inventory[i].quantity) {
+					highestQuantity = inventory[i]
+				}
+			}
+			return highestQuantity;
+		}
+
+		function findLowestQuantity (inventory) {
+			let lowestQuantity = Infinity;
+			for (let i = 0; i < inventory.length; i++) {
+				if (lowestQuantity > inventory[i].quantity) {
+					lowestQuantity = inventory[i]
+				}
+			}
+			return lowestQuantity;
+		}
+
+
+		console.log(findGreatestPrice(inventory))
+        console.log(findLowestPrice(inventory))
+		console.log(findGreatestQuantity(inventory))
+		console.log(findLowestQuantity(inventory))
+</script>
+</body>
+</html>
