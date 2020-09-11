@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!--Weather CSS-->
+    <link rel="stylesheet" href="../CSS/weather.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- jQuery and bootstrap-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<!--Keys-->
+<script src="../JS/keys.js"></script>
+
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+
+
+
+<!--Start-->
+<nav class="navbar">
+    <div class="nav-logo">
+        <h1>Wishful Weather</h1>
+        <img src="../Media/IMG/weather.jpg" class="logo">
+    </div>
+    <div class="searchbar-container">
+        <form class action="">
+            <input type="search">
+            <i class="fa fa-search"></i>
+        </form>
+    </div>
+
+</nav>
+
+
+</nav>
+<!--Todo: Bottom margin-->
+<!--Start Main-->
+<main>
+    <!--Start Searchbar-->
+    <!--Todo: Bottom margin-->
+    <div>
+        Place<input type="text" id="inputLocation" placeholder="City, State">
+        <!--Todo:Retrieve innerHTML link to both map search and weather search-->
+        <!--Todo:prevent typos/invalid inputs-->
+        <!--Todo:Style-->
+        <input type="submit" value="Submit" id="btn1">
+        <!--Todo:Event listener link to trigger both map search and weather search-->
+        <!--Todo:Style-->
+    </div>
+    <!--End Searchbar-->
+
+
+    <!--Start 5 Day Forecast-->
+    <!--Todo:5 more-->
+    <div>
+        <div class="forecastCard">
+            <!--Start Header-->
+            <!--Todo:Style centered, bg-color-grey-->
+            <header>{YY/MM/DD}</header>
+            <!--Todo:Link to forecast dates-->
+            <!--End Header-->
+
+            <!--Start Section-->
+            <!--Todo:Style centered-->
+            <section>
+                <div id="temperature"></div>
+                <p>IMG of current weather</p>
+            </section>
+            <!--End Main-->
+
+            <!--Start Main-->
+            <!--Todo:Style bg-color-grey, border, bold-->
+            <main>
+                <div id="description"></div>
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="pressure"></div>
+            </main>
+            <!--End Main-->
+        </div>
+    </div>
+    <!--Start 5 Day Forecast-->
+</main>
+<!--End Main-->
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+<!--Todo:Event listener click on map-->
+
+<script>
+	$(document).ready(function () {
+		$('#btn1').click(function () {
+			let inputLocation = $('#inputLocation').html();
+			alert(inputLocation);
+		});
+
+		mapboxgl.accessToken = MAPBOX_TOKEN;
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			zoom: 10,
+			center: [-98.4916, 29.4252]
+		});
+
+		//5 day weather forcast
+		$.get("http://api.openweathermap.org/data/2.5/weather", {
+			APPID: OPEN_WEATHER_MAP_KEY,
+			q: "San Antonio, US",
+			units: "imperial"
+		}).done(function (data) {
+			console.log(data);
+			//Start Loop
+			for (let i = 0; i < data.length; i++) {
+						let cityHTML = '<p>' + 'Current City: ' + data.name + '</p>';
+						$('#currentCity').html(cityHTML);
+
+						let tempHTML = '<p>' + data.main.temp_min + " / " + data.main.temp_max + '</p>';
+						$('#temperature').html(tempHTML);
+
+						let descriptionHTML = '<p>' + 'Description: ' + data.weather[0].description + '</p>';
+						$('#description').html(descriptionHTML);
+
+						let HumiditynHTML = '<p>' + 'Humidity: ' + data.main.humidity + '</p>';
+						$('#humidity').html(HumiditynHTML);
+
+						let windHTML = '<p>' + 'Wind: ' + data.wind.speed + '</p>';
+						$('#wind').html(windHTML);
+
+						let pressureHTML = '<p>' + 'Pressure: ' + data.main.pressure + '</p>';
+						$('#pressure').html(pressureHTML);
+          }
+		//End Conditional
+					function searchToggle(obj, evt){
+						var container = $(obj).closest('.search-wrapper');
+						if(!container.hasClass('active')){
+							container.addClass('active');
+							evt.preventDefault();
+						}
+						else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+							container.removeClass('active');
+							// clear input
+							container.find('.search-input').val('');
+						}
+					}
+		});
+    });
+</script>
+
+<!--TODO:Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
+
+<!--TODO:Update your layout and AJAX request(s) to display a five day forecast for the city you live in that looks like the screenshot below.-->
+
+<!--TODO:If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
+
+<!--TODO:Refer to your Mapbox API exercise. Recreate the map below your 5 day forecast. Read through the documentation for the Mapbox API and figure out how to allow the user to drop a pin on any place on the map. Once the user drops a pin, grab its coordinates and feed those into your OpenWeatherMap API. Update the five-day forecast with the information from those coordinates (you should also get rid of your input boxes at this point).-->
+
+<!--TODO:Add a Mapbox text input to search by location and have the forecast update when a new location is searched.-->
+
+<!--TODO:As a bonus make sure you can update the marker's position to the new search result.-->
+</body>
+</html>
