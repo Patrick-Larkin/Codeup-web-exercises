@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<main>
+    <div class="name">bob</div>
+    <div class="name">STEVE</div>
+    <div class="name">sAlLY</div>
+</main>
+
+<script>
+  // 1. Include script tags with the following object:
+
+  let lstName = {lName: "smith"};
+      let div = document.getElementsByTagName("div");
+  console.log(div)
+  // for (let i = 0; i < div.length; i++) {
+	//   div[i].innerText = capitalize(div[i].innerText.toLowerCase()) + " " + capitalize(lstName.lName);
+  // }
+
+  div.forEach(function (i) {
+	  div[i].innerText = capitalize(div[i].innerText.toLowerCase()) + " " + capitalize(lstName.lName);
+  })
+  function capitalize(newName) {
+	  return newName.charAt(0).toUpperCase() + newName.slice(1).toLowerCase();
+  }
+  <!-- Similar ES6 Solution: ~500 characters - nearly a 18% decrease in characters! -->
+  // { // use of block scope instead of IIFE
+	//   const fullName = {lName: "smith"}; // use of const vs. var
+	//   const divs = document.querySelectorAll("div"); // jQuery like syntax
+	//   const convertCase = str => str[0].toUpperCase() + str.substring(1).toLowerCase(); // arrow functions
+	//   const convertNodes = ({ lName }, nodes) => { // object destructuring
+	// 	  for (let node of nodes) { // for...of loop
+	// 		  node.innerText = `${convertCase(node.innerText)} ${convertCase(lName)}`; // template strings
+	// 	  }
+	//   }
+	//   convertNodes(fullName, divs);
+  // }
+</script>
+</body>
+</html>
+
