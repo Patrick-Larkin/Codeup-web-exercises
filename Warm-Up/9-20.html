@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch</title>
+
+</head>
+<body>
+<h1>Fetch Practice</h1>
+<hr>
+<div id="movieList"></div>
+<script>
+let movieList = [
+	{
+		movie: "Avengers",
+		producer: "Man #1",
+        genre: "Action"
+	},
+	{
+		movie: "Halloween",
+		producer: "Man #2",
+		genre: "Horror"
+	},
+	{
+		movie: "Movie #3",
+		producer: "Man #3",
+		genre: "Romance"
+	},
+	{
+		movie: "Movie #5",
+		producer: "Man #5",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #6",
+		produce: "Man #6",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #7",
+		producer: "Man #7",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #8",
+		producer: "Man #8",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #9",
+		producer: "Man #9",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #10",
+		producer: "Man #10",
+		genre: "Funny"
+	},
+	{
+		movie: "Movie #11",
+		producer: "Man #11",
+		genre: "Funny"
+	}
+];
+
+const users = `[
+	{
+		name: 'zach',
+		email: 'zach@codeup.com',
+		languages: ['javascript', 'bash']
+	},
+	{
+		name: 'ryan',
+		email: 'ryan@codeup.com',
+		languages: ['clojure', 'javascript']
+	},
+	{
+		name: 'luis',
+		email: 'luis@codeup.com',
+		languages: ['java', 'scala', 'php']
+	},
+	{
+		name: 'fernando',
+		email: 'fernando@codeup.com',
+		languages: ['java', 'php', 'sql']
+	},
+	{
+		name: 'justin',
+		email: 'justin@codeup.com',
+		languages: ['html', 'css', 'javascript', 'php']
+	},
+]`
+let result = JSON.parse(users);
+console.log(result)
+console.log(movieList);
+</script>
+</body>
+</html>

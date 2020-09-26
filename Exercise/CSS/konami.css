@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron);
-/*@import "./node_modules/nes.css/css/nes.css"*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 h2 {
     font-family: 'Press Start 2P', cursive !important;
     color: #ffffff;
@@ -19,15 +17,6 @@ h2 {
 div {
     text-align: center;
 }
-
-html, body {
-    font-family: monospace;
-    background-image: ../Media/pixel.jpg;
-    height: 99%;
-}
-
-
-
 /*Start controller into the unknown*/
 .controller {
     width: 500px;

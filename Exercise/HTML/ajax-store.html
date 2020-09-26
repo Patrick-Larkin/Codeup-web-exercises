@@ -1,33 +1,46 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Online Store</title>
 </head>
+<style type="text/css">
+    body {
+        background-color: deepskyblue;
+    }
+</style>
 <body>
+<div >
+    <h1>My Tool Store</h1>
+    <table id="products">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+</div>
 
-<h1>My Tool Store</h1>
-
-<table id="products">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Categories</th>
-    </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+<script src="../../jquery.js"></script>
 <script>
 	(function() {
 		"use strict";
 		// TODO: Create an AJAX GET request for the file under data/inventory.json
-            $.ajax('../JSON/inventory.json').ready( function () {
-
+            $.get('../JSON/inventory.json').done(function (data) {
+	            $('#insertProducts').html('');
+	            data.forEach(function (tool) {
+		            let row = `<tr>`;
+		            row += `<td> ${tool.title} </td>`
+		            row += `<td> ${tool.quantity} </td>`
+		            row += `<td> ${tool.price} </td>`
+		            row += `<td> ${tool.categories} </td>`
+		            row += `</tr>`;
+		            $('#insertProducts').append(row);
+	            });
             })
 		// TODO: Take the data from inventory.json and append it to the products table
 		//       HINT: Your data should come back as a JSON object; use console.log() to inspect

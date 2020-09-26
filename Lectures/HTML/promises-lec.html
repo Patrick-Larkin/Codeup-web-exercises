@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="../../keys.js"></script>
+</head>
+<body>
+<h1>Promises</h1>
+<button type="button" id="coin-flip">Coin Flip</button>
+<script>
+	// A JavaScript Promise object can be in one of three states: pending, resolved, or rejected.
+
+    // Basic Promise
+	// const promise1 = new Promise((resolve, reject) => {
+	// 	const res = true;
+	// 	//Multiple conditions can be tested
+	// 	const admin = true;
+    //
+	// 	// An asynchronous operation.
+	// 	if (res && admin) {
+	// 		resolve('Resolved!');
+	// 	}
+	// 	else {
+	// 		reject(Error('Error'));
+	// 	}
+	// });
+    //
+	// promise1.then((res) => console.log(res), (err) => alert(err));
+
+
+
+    //Creating a Javascript Promise object
+    // const executorFn = (resolve, reject) => {
+    //   console.log('The executor function of the promise!');
+    // };
+    // const promise2 = new Promise(executorFn);
+
+
+
+    // setTimeout()
+    // setTimeout() is an asynchronous JavaScript function that executes a code block or evaluates an expression through a callback function after a delay set in milliseconds.
+    // const loginAlert = () =>{
+    //   alert('Login');
+    // };
+    // setTimeout(loginAlert, 6000);
+    //
+	// 	const promise3 = new Promise((resolve, reject) => {
+	// 		setTimeout(() => {
+	// 			resolve('Result');
+	// 		}, 4000);
+	// 	});
+    //
+	// 	promise.then((res) => {
+	// 		console.log("123");
+	// 	}, (err) => {
+	// 		alert(err);
+	// 	});
+
+    //Chaining multiple .then() methods
+	// 	Promise.resolve('one').then((one) => {
+	// 		console.log(one);
+	// 		return 'two';
+	// 	}).then((two) => {
+	// 		console.log(two);
+	// 		return 'three';
+	// 	}).then((three) => {
+	// 		console.log(three);
+	// 	});
+
+
+
+
+    const coinFlip = function() {
+	    //Coin Flip
+	    const myPromise = new Promise((resolve, reject) => {
+		    setTimeout(() => {
+			    if (Math.random() > 0.5) {
+				    resolve();
+			    } else {
+				    reject();
+			    }
+		    }, 1500);
+	    });
+    }
+
+		console.log(myPromise); // a pending promise
+
+		myPromise.then(() => console.log('Resolve: Heads!'));
+		myPromise.catch(() => console.log('Reject: Tails!'));
+
+		$('#coin-flip').click(coinFlip());
+</script>
+</body>
+</html>

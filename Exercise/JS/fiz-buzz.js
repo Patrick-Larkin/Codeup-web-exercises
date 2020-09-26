@@ -1,14 +1,14 @@
-// for(let i = 1; i < 100; i++) {
-// 	if(i % 3 === 0 && i % 5 === 0) {
-// 		console.log(i + ". buzzzfizzz");
-// 	} else if (i % 5 === 0) {
-// 		console.log(i + ". fizzz");
-// 	} else if (i % 3 === 0) {
-// 		console.log(i + ". buzzz");
-// 	} else {
-// 		console.log(i + ". is a number")
-// 	}
-// }
+for(let i = 1; i < 100; i++) {
+	if(i % 3 === 0 && i % 5 === 0) {
+		console.log(i + ". buzzzfizzz");
+	} else if (i % 5 === 0) {
+		console.log(i + ". fizzz");
+	} else if (i % 3 === 0) {
+		console.log(i + ". buzzz");
+	} else {
+		console.log(i + ". is a number")
+	}
+}
 
 'use strict';
 

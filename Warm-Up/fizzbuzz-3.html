@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+Enter a number you want to skip:<input type="text" id="skip">
+<button type="button" id="button" form="skip">Enter</button>
+<script>
+	$(document).ready(function () {
+		$('#button').click(function () {
+			let num = $('#input').value();
+			fizzBuzz(num)
+		})
+
+		const fizzBuzz = (input) => {
+			for (let i = 1; i < 100; i++) {
+				if (i % 3 === 0 && i % 5 === 0)
+					console.log(i + ". buzzzfizzz")
+				else if (i % 5 === 0)
+					console.log(i + ". fizzz")
+				else if (i % 3 === 0)
+					console.log("buzzz")
+				else
+					console.log(`${i} is a number`)
+			}
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,11 +1,10 @@
 'use strict';
-
 function question() {
-	return prompt("Enter a odd number between 1 and 50");
+	let skip = prompt("Enter a odd number between 1 and 50");
 }
 
-question();
-if(number !== "number") {
+question(skip);
+if(skip !== 'number') {
 	question();
 } else {
 	for (var i = 1; i < 50; i++) {

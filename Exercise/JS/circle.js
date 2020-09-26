@@ -22,6 +22,7 @@
 		}
 	};
 
+
 	// log info about the circle
 	console.log("Raw circle information");
 	circle.logInfo(false);

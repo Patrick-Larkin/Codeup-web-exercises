@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful API Requests</title>
+</head>
+<body>
+// <!--CRUD - Create Read Update Delete-->
+<h1>RESTful API Requests</h1>
+<script src="../Javascript/dog-api.js"></script>
+<script>
+	"use strict";
+    getDogs().then(console.log)
+	// console.log all dogs
+
+	// alert the name of the first dog
+    alert(getDog(2))
+
+    // Edit the second dog
+    editDog({id :1, name: "Cool Snickers", age: 10, isGoodDog: true})
+
+    // Delete the second dog
+    deleteDog(2)
+
+    // Delete the second dog
+    // addDog({id :4, name: "hephaestus", age: 2, isGoodDog: true})
+</script>
+</body>
+</html>
