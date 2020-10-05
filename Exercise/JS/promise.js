@@ -1,21 +1,37 @@
 $(document).ready(function () {
-	let getDate = (gitUsername) => {
-		let url = `https://api.github.com/users/${gitUsername}/events/public`;
-		return fetch(url, {headers: {'Authorization': `token 
-		${GITHUB_KEY}`}})
+	let getDateLastCommit = (username) => {
+		let url = `https://api.github.com/users/${username}/events/public`;
+		return fetch(url, {headers: {'Authorization': `token ${GITHUB_KEY}`}})
 				.then(response => response.json())
-				.then(events => events.filter(events => events.type === "PushEvent"))
-				.then(pushEvents => pushEvents[0])
+				.then(console.log(response))
+				.then(events => events.filter(event => event.type === "PushEvent"))
+				.then(pushEvents => pushEvents[0].created_at)
+				.catch(err => console.error(`Something went amiss: ${err}`));
 	}
 
-  // Get value on button click and show alert
-	$("#Btn").click(function () {
-		let gitUsername = $("#gitUsername").value();
+	$("#gitUsernameBtn").click(function () {
+		let gitUsername = $('#gitUsername').value();
 		console.log(gitUsername);
-		getDate(gitUsername)
-				.then(date => {
-					$('#output').innerText = date;
+		getDateLastCommit(gitUsername)
+				.then(events => {
+					$('#gitUsername').innerText = gitUsername
+					$('#output').innerText = events;
 				})
 	});
-	// .catch(error => console.log('error', error));
 })
+
+
+
+//Race
+// let wait = (ms) => {
+// 	return new Promise ((resolve) => {
+// 		setTimeout(()=>{
+// 			resolve("Hello World");
+// 		}, ms);
+// 	})
+// }
+//
+// wait(3000).then((data) => console.log('You\'ll see this after 3 seconds ' + data));
+// wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+// let random = Math.floor(Math.random()*5000);
+// wait(random).then(() => console.log(`You'll see this after ${random / 1000} seconds!`))

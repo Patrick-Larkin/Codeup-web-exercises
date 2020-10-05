@@ -10,87 +10,105 @@
 <h1>Promises</h1>
 <button type="button" id="coin-flip">Coin Flip</button>
 <script>
-	// A JavaScript Promise object can be in one of three states: pending, resolved, or rejected.
+	let starFetch = fetch("https://swapi.dev/api/people/9/")
+	    .then(result => {
+	        console.log(result);
+	        return result.json();
+	    })
+	    .then(data => {
+	        console.log(data)
+	        return "Star Wars Finished"
+	        }
+	    );
 
-    // Basic Promise
-	// const promise1 = new Promise((resolve, reject) => {
-	// 	const res = true;
-	// 	//Multiple conditions can be tested
-	// 	const admin = true;
-    //
-	// 	// An asynchronous operation.
-	// 	if (res && admin) {
-	// 		resolve('Resolved!');
-	// 	}
-	// 	else {
-	// 		reject(Error('Error'));
-	// 	}
-	// });
-    //
-	// promise1.then((res) => console.log(res), (err) => alert(err));
+	let githubFetch = fetch("https://api.github.com/users")
+	    .then(response => response.json())
+	    .then(result => {
+	        result.forEach(user => console.log(user));
+	        return "GitHub Finished"
+	    })
+	    .catch(error => console.error(error))
+
+	Promise.all([starFetch,githubFetch])
+	    .then(data => {
+	        console.log("Both are Complete!!!!")
+	        console.log(data);
+	    })
+
+	let redTurtle = Math.floor(Math.random()*10000);
+	let purpleTurtle = Math.floor(Math.random()*10000);
+	let blueTurtle = Math.floor(Math.random()*10000);
+	let orangeTurtle = Math.floor(Math.random()*10000);
+	console.log("And they're off!!")
+	let goRedTurtle = new Promise((resolve) => {
+	    setTimeout(() => {
+	        resolve(`Red Turtle Finished in ${redTurtle}ms!`)
+	    }, redTurtle)
+	} ).then(data => {
+	    console.log(data);
+
+	    let goPurpleTurtle = new Promise((resolve) => {
+	        setTimeout(() => {
+	            resolve(`Purple Turtle Finished in ${purpleTurtle}ms!`)
+	        }, purpleTurtle)
+	    }).then(data => {
+	        console.log(data);
+
+	        let goBlueTurtle = new Promise((resolve) => {
+	            setTimeout(() => {
+	                resolve(`Blue Turtle Finished in ${blueTurtle}ms!`)
+	            }, blueTurtle)
+	        }).then(data => {
+	            console.log(data);
+
+	            let goOrangeTurtle = new Promise((resolve) => {
+	                setTimeout(() => {
+	                    resolve(`Orange Turtle Finished in ${orangeTurtle}ms!`)
+	                }, orangeTurtle)
+	            }).then(data => {
+	                console.log(data)
+	                console.log("When will this output be seen?");
+	            });
+	        })
+	    })
+	})
 
 
+	console.log("And they're off!!")
+	Promise.race([goRedTurtle,goPurpleTurtle,goBlueTurtle,goOrangeTurtle])
+	.then(data => console.log(data));
 
-    //Creating a Javascript Promise object
-    // const executorFn = (resolve, reject) => {
-    //   console.log('The executor function of the promise!');
-    // };
-    // const promise2 = new Promise(executorFn);
-
-
-
-    // setTimeout()
-    // setTimeout() is an asynchronous JavaScript function that executes a code block or evaluates an expression through a callback function after a delay set in milliseconds.
-    // const loginAlert = () =>{
-    //   alert('Login');
-    // };
-    // setTimeout(loginAlert, 6000);
-    //
-	// 	const promise3 = new Promise((resolve, reject) => {
-	// 		setTimeout(() => {
-	// 			resolve('Result');
-	// 		}, 4000);
-	// 	});
-    //
-	// 	promise.then((res) => {
-	// 		console.log("123");
-	// 	}, (err) => {
-	// 		alert(err);
-	// 	});
-
-    //Chaining multiple .then() methods
-	// 	Promise.resolve('one').then((one) => {
-	// 		console.log(one);
-	// 		return 'two';
-	// 	}).then((two) => {
-	// 		console.log(two);
-	// 		return 'three';
-	// 	}).then((three) => {
-	// 		console.log(three);
-	// 	});
-
-
-
-
-    const coinFlip = function() {
-	    //Coin Flip
-	    const myPromise = new Promise((resolve, reject) => {
-		    setTimeout(() => {
-			    if (Math.random() > 0.5) {
-				    resolve();
-			    } else {
-				    reject();
-			    }
-		    }, 1500);
+	Promise.resolve('one')
+	    .then((one) => {
+	        console.log(one);
+	        return 'two';
+	    })
+	    .then((two) => {
+	        console.log(two);
+	        return 'three';
+	    })
+	    .then((three) => {
+	        console.log(three);
 	    });
-    }
 
-		console.log(myPromise); // a pending promise
+	const makeRequest = () => {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (Math.random() > 0.1) {
+					resolve('Here is your data: ...');
+				} else {
+					reject('Network Connection Error!');
+				}
+			}, 2000);
+		});
+	}
 
-		myPromise.then(() => console.log('Resolve: Heads!'));
-		myPromise.catch(() => console.log('Reject: Tails!'));
-
-		$('#coin-flip').click(coinFlip());
+	const request = makeRequest();
+	console.log(request); // pending promise
+	request.then(message => console.log('Promise resolved!', message));
+	// if resolved, will log "Promise resolved!" and "Here is your data: ..."
+	request.catch(message => console.log('Promise rejected!', message));
+	// if rejected, will log "Promise rejected!" and "Network Connection Error!"
 </script>
 </body>
 </html>
