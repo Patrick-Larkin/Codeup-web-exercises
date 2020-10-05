@@ -1,4 +1,3 @@
-/* Complete the TODO items below*/
 const users = [
 	{
 		name: 'zach',
@@ -80,13 +79,13 @@ users.forEach(function({name, email, languages}) {
 });
 
 // TODO: Use `let` for the following variable
-var list = '<ul>';
+let list = '<ul>';
 
 // TODO: rewrite the following lo op to use a for..of loop
 for(developer of developers) {
 	// TODO: rewrite the assignment below to use template strings
-	list += '<li>' + developer + '</li>';
-});
+	list += '<li><h3>' + developer + '</h3></li>';
+}
 list += '</ul>';
 
 document.write(list)
